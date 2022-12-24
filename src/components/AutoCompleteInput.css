@@ -1,0 +1,23 @@
+.aciRoot {
+  position: relative;
+}
+
+.aciItem {
+  padding: 5px 0;
+}
+
+.aciSuggetionsWrapper {
+  position: absolute;
+  background-color: rgb(241, 239, 243);
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  padding: 0 2px;
+  height: min-content;
+  overflow: scroll;
+}
+
+.aciSuggetionsWrapper .hoveredItem {
+  background-color: lightskyblue;
+  cursor: pointer;
+  font: larger;
+}
