@@ -14,13 +14,13 @@ interface AutoCompleteInputProps
   extends Omit<React.ComponentPropsWithRef<"input">, "onChange"> {
   addressGenerator: (query: string) => string;
   transformResult: (response: any) => any[];
-  getLabel?: (chosenItem: any) => string;
-  value?: any;
-  userInputValue?: string;
+  getLabel: (chosenItem: any) => string;
+  value: any;
+  userInputValue: string;
   renderFunction: (parameters: RenderFunctionParams) => React.ReactNode;
   wrapperProps?: React.ComponentPropsWithRef<"div">;
   placeholder?: string;
-  keyGenerator: (item: any, index: number) => any;
+  keyGenerator?: (item: any, index: number) => any;
   outerWrapperRef?: React.MutableRefObject<HTMLDivElement | null>;
   innerWrapperRef?: React.MutableRefObject<HTMLDivElement | null>;
   onChange?: (selectedItem: any) => any;
@@ -31,13 +31,14 @@ interface AutoCompleteInputProps
   loadingComponent?: React.ReactNode;
   errorComponent?: React.ReactNode;
   itemHeight: number;
+  maxSuggestionListHeight?: number;
 }
 
 export interface RenderFunctionParams {
   data: any;
   getLabel: (chosenItem: any) => string;
   props: RenderFunctionProps;
-  boldedMatchText: () => React.ReactNode;
+  boldedMatchText: React.ReactNode;
 }
 
 interface RenderFunctionProps {
@@ -55,7 +56,7 @@ const AutoCompleteInput = forwardRef(
       transformResult = (response) => response,
       renderFunction,
       getLabel = (chosenItem) => chosenItem,
-      keyGenerator,
+      keyGenerator = (item, index) => index,
       value,
       placeholder = "Enter your text",
       wrapperProps,
@@ -70,6 +71,7 @@ const AutoCompleteInput = forwardRef(
       loadingComponent = <p>Loading suggestions!</p>,
       errorComponent = <p>Something went wrong with receiving suggestions!</p>,
       itemHeight,
+      maxSuggestionListHeight = 400,
       ...rest
     } = props;
 
@@ -78,7 +80,10 @@ const AutoCompleteInput = forwardRef(
     useImperativeHandle(ref, () => inputRef.current);
     const { coords, anchorWidth } = useStickAnchor(inputRef);
 
-    const finalInputValue = userInputValue ?? getLabel(value);
+    console.log(userInputValue);
+    console.log(getLabel(value));
+
+    const finalInputValue = value ? getLabel(value) : userInputValue;
 
     const {
       showSuggestions,
@@ -146,7 +151,7 @@ const AutoCompleteInput = forwardRef(
 
     return (
       <div
-        {...wrapperProps}
+        {...wrapperProps} //TODO ask how it doesn't overwrite my className
         className={`aciRoot ${wrapperProps?.className}`}
         ref={outerWrapperRef}
       >
@@ -170,6 +175,7 @@ const AutoCompleteInput = forwardRef(
               left: coords.x,
               width: anchorWidth,
               height: suggestionsList.length * itemHeight,
+              maxHeight: maxSuggestionListHeight,
             }}
             ref={innerWrapperRef}
           >

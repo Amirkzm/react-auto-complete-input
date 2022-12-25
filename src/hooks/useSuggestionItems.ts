@@ -14,7 +14,7 @@ interface RenderFunctionParams {
   data: any;
   getLabel: (chosenItem: any) => string;
   props: RenderFunctionProps;
-  boldedMatchText: () => React.ReactNode;
+  boldedMatchText: React.ReactNode;
 }
 
 interface RenderFunctionProps {
@@ -57,13 +57,11 @@ const useSuggestionItems = (
             className: `aciItem ${hoveredIndex === index ? "hoveredItem" : ""}`,
             onMouseEnter: () => setHoveredIndex(index),
           },
-          boldedMatchText: () => {
-            return highlightWord(
-              fullSuggestedText,
-              finalInputValue,
-              getLabel(item)
-            );
-          },
+          boldedMatchText: highlightWord(
+            fullSuggestedText,
+            finalInputValue,
+            getLabel(item)
+          ),
         });
       }),
     [
