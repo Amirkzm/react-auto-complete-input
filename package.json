@@ -1,5 +1,5 @@
 {
-  "name": "auto-complete",
+  "name": "@amirkzm/react-auto-complete",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -8,33 +8,49 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/amirkzm"
   },
-  "dependencies": {
+  "keywords": [
+    "autocomplete",
+    "auto-complete",
+    "auto-suggest",
+    "autosuggest",
+    "auto suggest",
+    "react auto-suggest",
+    "react autocomplete",
+    "react autosuggest",
+    "auto complete",
+    "react-autosuggest",
+    "react auto complete",
+    "react auto suggest",
+    "react auto-complete",
+    "react-component",
+    "react-auto-complete",
+    "react-auto-suggest",
+    "react-autocomplete"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^23.0.4",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.2.0",
+    "@rollup/plugin-typescript": "^10.0.1",
+    "@types/react": "^17.0.0",
+    "rollup": "^3.7.2",
+    "rollup-plugin-dts": "^5.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.4",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.13",
     "@types/react-dom": "^18.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
     "web-vitals": "^2.1.0"
   },
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^23.0.4",
-    "@rollup/plugin-node-resolve": "^15.0.1",
-    "@rollup/plugin-terser": "^0.2.0",
-    "@rollup/plugin-typescript": "^10.0.1",
-    "@types/react": "^18.0.26",
-    "rollup": "^3.7.2",
-    "rollup-plugin-dts": "^5.0.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2",
-    "tslib": "^2.4.1",
-    "typescript": "^4.9.4"
-  },
   "peerDependencies": {
-    "react": "^18.2.0"
+    "react": "^18.0.0 || ^17.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
