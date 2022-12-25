@@ -121,7 +121,6 @@ function App() {
 ```
 
 ## Props
-
 | Props                   |   Types   | Required | Description                                                                                                                                                                                    |
 |-------------------------|:---------:|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | renderFunction          |  Function |     ✓    | React component responsible for rendering the each individual item of the suggestion's list.                                                                                                   |
@@ -143,7 +142,7 @@ function App() {
 | innerWrapperRef         |    ref    |          | This ref prop target the inner(suggestions div) div.                                                                                                                                           |
 | freeSolo                |  Boolean  |          | Use this if you want user can have the ability of not choosing any suggestion and use it's own entered input. Default is true.                                                                 |
 | inputComponenProps      |   Object  |          | Pass through arbitrary props to the input. It is useful when you define your own component as input component(e.g. MUI textField or your own customized components with specified props set).  |
-| maxSuggestionListHeight |   number  |          | Max height of suggestion list.
+| maxSuggestionListHeight |   number  |          | Max height of suggestion list.                                                                                                                                                                 |
 
 #### renderFunction(Required)
 
