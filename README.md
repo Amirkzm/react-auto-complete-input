@@ -35,13 +35,13 @@ Add demo here
 Install by npm:
 
 ```
-npm install amirkzm/...
+npm install amirkzm/react-auto-complete"
 ```
 
 Or:
 
 ```
-yarn add amirkzm/...
+yarn add amirkzm/react-auto-complete"
 ```
 
 ## Usage
@@ -50,7 +50,7 @@ yarn add amirkzm/...
 import React, { useState } from "react";
 import AutoCompleteInput, {
   RenderFunctionParams,
-} from "@amirkzm/name-of-package";
+} from "@amirkzm/react-auto-complete"";
 import TextField from "@mui/material/TextField";
 
 //Transform the returned reponse from server to an array (array of suggestions)
