@@ -4,10 +4,6 @@
 
 A search auto-completer with dynamic backend support.
 
-# Demo
-
-Add demo here
-
 ## Table of Contents
 
 1. [Main Features ](#features)
